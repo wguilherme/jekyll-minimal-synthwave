@@ -4,26 +4,27 @@
   img {
     filter: invert(1);
 
-    &.ioda {
-      filter: invert(0);
-    }
+    &.ioda { filter: invert(0); }
   }
 }
 
-body[a="dark"] {
-  @include dark-appearance;
-}
+body[a="dark"] { @include dark-appearance; }
+
 
 @media (prefers-color-scheme: dark) {
-  body[a="auto"] {
-    @include dark-appearance;
-  }
+  body[a="auto"] { @include dark-appearance; }
 }
 // -------------------------------------------- //
 
-html, body {
-  background: #262335; // Editor background color
-  color: #ffffff; // Foreground color
+// bg color is also needed in html in order to
+// block body's background propagation
+// see: https://stackoverflow.com/a/61265706
+html, body { background: white; }
+
+html { height: 100%; }
+
+body {
+  color: #191a22;
   font-family: monospace;
   font-size: 16px;
   line-height: 1.4;
@@ -32,38 +33,18 @@ html, body {
   overflow-wrap: break-word;
 }
 
-.post-meta {
-  text-align: right;
-}
+.post-meta { text-align: right; }
 
-h2, h3, h4, h5, h6 {
-  margin-top: 3rem;
-  color: #61e2ff; // Markup heading color
-}
 
-hr {
-  margin: 2rem 0;
-  text-align: center;
-  border: 0;
-  &:before {
-    content: '/////';
-  }
-  &:after {
-    content: attr(data-content) '/////';
-  }
-}
+h2, h3, h4, h5, h6 { margin-top: 3rem; }
 
-p {
-  margin: 1rem 0;
-}
+hr { margin: 2rem 0; }
 
-li {
-  margin: 0.4rem 0;
-}
+p { margin: 1rem 0; }
 
-*:target {
-  background: #34294f59; // Highlight background
-}
+li { margin: 0.4rem 0; }
+
+*:target { background: yellow; }
 
 .w {
   max-width: 640px;
@@ -71,20 +52,25 @@ li {
   padding: 4rem 2rem;
 }
 
-table {
-  width: 100%;
-  background: #232530; // Dropdown background
+hr {
+  text-align: center;
+  border: 0;
+
+  &:before { content: '/////' }
+  &:after { content: attr(data-content) '/////' }
 }
 
+table { width: 100%; }
+
 table, th, td {
-  border: thin solid #495495; // EditorGroup border color
+  border: thin solid black;
   border-collapse: collapse;
   padding: 0.4rem;
 }
 
 code {
-  color: #ffffff;
-  background: #2a2139;
+  color: white;
+  background: black;
 }
 
 div.highlighter-rouge code {
@@ -92,14 +78,14 @@ div.highlighter-rouge code {
   overflow-x: auto;
   white-space: pre-wrap;
   padding: 1rem;
-  background: #232530;
 }
 
 blockquote {
   font-style: italic;
-  border: thin solid #8a2dc0;
+  border: thin solid black;
   padding: 1rem;
-  color: #b6b1b1;
+
+  p { margin: 0; }
 }
 
 img {
@@ -107,3 +93,14 @@ img {
   display: block;
   margin: 0 auto;
 }
+
+
+// synthwave theme colors
+
+h1 { color: #fe6b75; }
+h2 { color: #dba663; }
+h3 { color: #6c8e50; }
+h4 { color: #6589d8; }
+h5 { color: #b8c3f1; }
+h6 { color: #b8c3f1; }
+p { color: #b8c3f1}
