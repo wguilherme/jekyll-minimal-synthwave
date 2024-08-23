@@ -103,10 +103,7 @@ img {
   from {
     text-shadow: 
       0 0 5px #fe6b75,
-      0 0 10px #fe6b75,
-      0 0 20px #fe6b75,
-      0 0 40px #ff00de,
-      0 0 80px #ff00de;
+      0 0 15px #ff00de;
   }
   to {
     text-shadow: 
@@ -120,12 +117,6 @@ img {
 
 h1 {
   color: #fe6b75;
-  text-shadow: 
-    0 0 5px #fe6b75,
-    0 0 10px #fe6b75,
-    0 0 20px #fe6b75,
-    0 0 30px #ff00de,
-    0 0 40px #ff00de;
   animation: glow 1.5s ease-in-out infinite alternate;
 }
 h2 { color: #dba663; }
