@@ -4,6 +4,12 @@
   p { color: #b8c3f1}
   a { color: #b1e5fd }
   ul, li { color: #b8c3f1 }
+  background: linear-gradient(
+      rgba(42, 33, 57, 0.8),
+      rgba(42, 33, 57, 0.8)
+    ),
+    url('https://via.placeholder.com/1920x1080') no-repeat center center fixed;
+background-size: cover;
 }
 
 body[a="dark"] { @include dark-appearance; }
@@ -12,11 +18,7 @@ body[a="dark"] { @include dark-appearance; }
 @media (prefers-color-scheme: dark) {
   body[a="auto"] { @include dark-appearance; }
 }
-// -------------------------------------------- //
 
-// bg color is also needed in html in order to
-// block body's background propagation
-// see: https://stackoverflow.com/a/61265706
 html, body { background: white; }
 
 html { height: 100%; }
@@ -93,7 +95,6 @@ img {
 
 
 // synthwave theme colors
-
 h1 { color: #fe6b75; }
 h2 { color: #dba663; }
 h3 { color: #6c8e50; }
