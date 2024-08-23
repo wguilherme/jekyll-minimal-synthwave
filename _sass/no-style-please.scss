@@ -1,6 +1,8 @@
 // -------------- THEME SWITCHER -------------- //
 @mixin dark-appearance {
   background: #191a22;
+  p { color: #b8c3f1}
+  a { color: #b1e5fd }
 }
 
 body[a="dark"] { @include dark-appearance; }
