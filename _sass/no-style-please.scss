@@ -1,22 +1,19 @@
 // -------------- THEME SWITCHER -------------- //
 @mixin dark-appearance {
-  background: #191a22;
-  p { color: #b8c3f1}
-  a { color: #b1e5fd }
-  ul, li { color: #b8c3f1 }
   background:
-  linear-gradient(
-    to top,
-    rgba(34, 25, 34) 20%,
-    rgba(25, 26, 34) 30%,
-    rgb(25, 26, 34) 50%
-  ),
+    linear-gradient(
+      to top,
+      rgba(25, 26, 34, 1) 100%
+    ),
     url('/assets/images/bg.png') no-repeat center center fixed;
-background-size: cover;
+  background-size: cover;
+
+  p { color: #b8c3f1; }
+  a { color: #b1e5fd; }
+  ul, li { color: #b8c3f1; }
 }
 
 body[a="dark"] { @include dark-appearance; }
-
 
 @media (prefers-color-scheme: dark) {
   body[a="auto"] { @include dark-appearance; }
@@ -36,7 +33,6 @@ body {
 }
 
 .post-meta { text-align: right; }
-
 
 h2, h3, h4, h5, h6 { margin-top: 3rem; }
 
@@ -58,8 +54,8 @@ hr {
   text-align: center;
   border: 0;
 
-  &:before { content: '/////' }
-  &:after { content: attr(data-content) '/////' }
+  &:before { content: '/////'; }
+  &:after { content: attr(data-content) '/////'; }
 }
 
 table { width: 100%; }
@@ -96,12 +92,38 @@ img {
   margin: 0 auto;
 }
 
-
 // synthwave theme colors
-h1 { color: #fe6b75; }
+
+@keyframes glow {
+  from {
+    text-shadow: 
+      0 0 5px #fe6b75,
+      0 0 10px #fe6b75,
+      0 0 20px #fe6b75,
+      0 0 40px #ff00de,
+      0 0 80px #ff00de;
+  }
+  to {
+    text-shadow: 
+      0 0 10px #fe6b75,
+      0 0 20px #fe6b75,
+      0 0 30px #fe6b75,
+      0 0 50px #ff00de,
+      0 0 90px #ff00de;
+  }
+}
+
+h1 {
+  color: #fe6b75;
+  text-shadow: 
+    0 0 5px #fe6b75,
+    0 0 10px #fe6b75,
+    0 0 20px #fe6b75,
+    0 0 40px #ff00de,
+    0 0 80px #ff00de;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
 h2 { color: #dba663; }
 h3 { color: #6c8e50; }
 h4 { color: #6589d8; }
-h5 { color: #b8c3f1; }
-h6 { color: #b8c3f1; }
-p { color: #b8c3f1}
+h5, h6, p { color: #b8c3f1; }
