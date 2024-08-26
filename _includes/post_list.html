@@ -15,7 +15,7 @@
     {%- for post in posts limit: include.limit -%}
         <li>
           <span>{{- post.date | date: "%Y-%m-%d" -}}</span>
-          <p>oi</p>
+          <!-- <p>oi</p> -->
           <a href="{{ post.url | relative_url }}">{{ post.title | downcase }}</a>
         </li>
     {%- endfor -%}
