@@ -62,19 +62,22 @@ hr {
 
   &:before { content: '/////'; }
   &:after { content: attr(data-content) '/////'; }
+
+  color: #49694d;
 }
 
 table { width: 100%; }
 
 table, th, td {
-  border: thin solid black;
+  border: thin solid #D7F4DA;
   border-collapse: collapse;
   padding: 0.4rem;
 }
 
 code {
   color: white;
-  background: black;
+  background: #031504;
+  border: 1px solid #0b5d1454
 }
 
 div.highlighter-rouge code {
@@ -86,7 +89,7 @@ div.highlighter-rouge code {
 
 blockquote {
   font-style: italic;
-  border: thin solid black;
+  border: thin solid #D7F4DA;
   padding: 1rem;
 
   p { margin: 0; }

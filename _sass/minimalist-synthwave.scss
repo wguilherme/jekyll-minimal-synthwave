@@ -55,6 +55,8 @@ hr {
 
   &:before { content: '/////'; }
   &:after { content: attr(data-content) '/////'; }
+
+  color: white;
 }
 
 table { width: 100%; }
