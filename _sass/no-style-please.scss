@@ -1,13 +1,13 @@
 // -------------- THEME SWITCHER -------------- //
 @mixin dark-appearance {
-  background: #220C35;
+  background: #001400;
 
   p { color: #b8c3f1; }
   a { color: #b1e5fd; }
   ul, li { color: #b8c3f1; }
 
   & {
-    background: url('/assets/images/bg.jpg') no-repeat center bottom fixed;
+    background: url('/assets/images/bg_hack.jpg') no-repeat center bottom fixed;
     background-size: cover;
   }
 }
@@ -110,10 +110,10 @@ img {
 }
 
 h1 {
-  color: #ffda00;
+  color: #09E22C;
   // animation: glow 1.5s ease-in-out infinite alternate;
 }
 h2 { color: #dba663; }
 h3 { color: #6c8e50; }
 h4 { color: #6589d8; }
-h5, h6, p { color: #b8c3f1; }
+h5, h6, p { color: #D7F4DA; }
