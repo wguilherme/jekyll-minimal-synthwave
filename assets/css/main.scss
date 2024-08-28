@@ -1,8 +1,6 @@
 ---
 ---
 
-@import "minimalist-please";
-
 {% if site.theme_config.style == 'hacker' %}
   @import "minimalist-hacker";
 {% else %}
