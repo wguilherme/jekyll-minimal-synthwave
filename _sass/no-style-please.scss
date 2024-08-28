@@ -7,9 +7,7 @@
   a {
      color: #D7F4DA; 
      &:hover {
-      // add glow effect
-      animation: glow 0.5s ease-in-out infinite alternate;
-      text-shadow: 0 0 5px #D7F4DA, 0 0 15px #09E22C;
+      text-shadow: 0 0 5px #D7F4DA, 0 0 10px #09E22C;
     }
   }
 
