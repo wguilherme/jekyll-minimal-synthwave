@@ -2,9 +2,18 @@
 @mixin dark-appearance {
   background: #001400;
 
-  p { color: #b8c3f1; }
-  a { color: #b1e5fd; }
-  ul, li { color: #b8c3f1; }
+  p { color: #D7F4DA; }
+  
+  a {
+     color: #D7F4DA; 
+     &:hover {
+      // add glow effect
+      animation: glow 0.5s ease-in-out infinite alternate;
+      text-shadow: 0 0 5px #D7F4DA, 0 0 15px #09E22C;
+    }
+  }
+
+  ul, li { color: #D7F4DA; }
 
   & {
     background: url('/assets/images/bg_hack.jpg') no-repeat center bottom fixed;
@@ -91,27 +100,8 @@ img {
   margin: 0 auto;
 }
 
-// synthwave theme colors
-
-@keyframes glow {
-  from {
-    text-shadow: 
-      0 0 5px #fe6b75,
-      0 0 15px #ff00de;
-  }
-  to {
-    text-shadow: 
-      0 0 10px #fe6b75,
-      0 0 20px #fe6b75,
-      0 0 30px #fe6b75,
-      0 0 50px #ff00de,
-      0 0 90px #ff00de;
-  }
-}
-
 h1 {
   color: #09E22C;
-  // animation: glow 1.5s ease-in-out infinite alternate;
 }
 h2 { color: #dba663; }
 h3 { color: #6c8e50; }
