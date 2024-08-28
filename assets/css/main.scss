@@ -1,4 +1,10 @@
 ---
 ---
 
-@import "no-style-please";
+@import "minimalist-please";
+
+{% if site.theme_config.style == 'hacker' %}
+  @import "minimalist-hacker";
+{% else %}
+  @import "minimalist-synthwave";
+{% endif %}
