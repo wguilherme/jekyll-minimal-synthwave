@@ -1,15 +1,15 @@
 # minimalist-please
 
-<img src="https://raw.githubusercontent.com/riggraz/no-style-please/master/logo.png" width="64" align="left" />A (nearly) no-CSS, fast, minimalist [Jekyll](https://jekyllrb.com/) theme.
-Inspired by no style, please [riggraz](https://riggraz.dev/), expressly created for [my personal hackspace](https://blog.phantombyte.uk/).
+<img src="https://raw.githubusercontent.com/wguilherme/no-style-please/master/logo.png" width="64" align="left" />A (nearly) no-CSS, fast, minimalist [Jekyll](https://jekyllrb.com/) theme.
+Inspired by no style, please [wguilherme](https://wguilherme.dev/), expressly created for [my personal hackspace](https://blog.phantombyte.uk/).
 
 <h3 align="center"><a href="https://blog.phantombyte.uk/">Try the demo out!</a></h3>
 
-<img src="https://raw.githubusercontent.com/riggraz/no-style-please/master/_screenshots/featured-image.png" />
+<img src="_screenshots/featured-image.png" />
 
 ## Features
 
-* Fast (**1kb of CSS!** For more information on performance and more, see [Page Speed Insights report](https://raw.githubusercontent.com/riggraz/no-style-please/master/_screenshots/page-speed-insights-report.png) and [Lighthouse report](https://raw.githubusercontent.com/riggraz/no-style-please/master/_screenshots/lighthouse-report.png))
+* Fast (**1kb of CSS!** For more information on performance and more, see [Page Speed Insights report](_screenshots/page-speed-insights-report.png) and [Lighthouse report](https://raw.githubusercontent.com/wguilherme/no-style-please/master/_screenshots/lighthouse-report.png))
 * Light, dark and auto modes
 * Responsive
 * Content first (typography optimized for maximum readability)
@@ -74,7 +74,7 @@ The `menu.yml` file accepts the following fields:
 
 ### Create archive pages
 
-A so-called archive page is a page that shows a list of posts (see [this](https://riggraz.dev/no-style-please/all-posts) for an example). You can create an archive page by creating a page and putting the following frontmatter:
+A so-called archive page is a page that shows a list of posts (see [this](https://wguilherme.dev/no-style-please/all-posts) for an example). You can create an archive page by creating a page and putting the following frontmatter:
 
 ```
 ---
@@ -86,7 +86,7 @@ which_category: name-of-category
 
 `which_category` is optional: if you don't put it, then all posts of the blog will be listed; on the other hand, if you specify a category, only posts of that category will be shown.
 
-This feature is particularly useful if used together with the `show_more` attribute in the menu. For example, if you want to limit the number of posts shown in the home page to 5 but add a link to view them all, then you can create an archive page using the method showed above and link to it using the `show_more_url` attribute in `menu.yml`. See [this example](https://github.com/riggraz/no-style-please/blob/master/_data/menu.yml) if you're in doubt.
+This feature is particularly useful if used together with the `show_more` attribute in the menu. For example, if you want to limit the number of posts shown in the home page to 5 but add a link to view them all, then you can create an archive page using the method showed above and link to it using the `show_more_url` attribute in `menu.yml`. See [this example](https://github.com/wguilherme/no-style-please/blob/master/_data/menu.yml) if you're in doubt.
 
 ### Customize the index page
 
@@ -100,13 +100,13 @@ Another thing you can do to customize the index page is show the description of 
 
 This theme provides dark mode by inverting all colors of light mode throught the CSS `invert()` function. This approach would also invert the color of all images, but, since this is not the behaviour one would expect, images are not inverted by default.
 
-However, if you would like to force the color inversion on a specific image you can do so by applying `class="ioda"` to that image ("ioda" stands for "invert on dark appearance"). See the image in the [overview post](https://github.com/riggraz/no-style-please/blob/master/_posts/2020-07-07-overview-post.md) for an example of this approach. Note that color inversion will take place only when the theme has dark appearance!
+However, if you would like to force the color inversion on a specific image you can do so by applying `class="ioda"` to that image ("ioda" stands for "invert on dark appearance"). See the image in the [overview post](https://github.com/wguilherme/no-style-please/blob/master/_posts/2020-07-07-overview-post.md) for an example of this approach. Note that color inversion will take place only when the theme has dark appearance!
 
 For example, if you have a black and white image it could make sense to invert it in dark mode. On the other hand, a colorful image will probably look bad if inverted.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/riggraz/no-style-please. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/wguilherme/no-style-please. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Development
 
