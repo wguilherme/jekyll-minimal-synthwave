@@ -1,6 +1,6 @@
 # minimal-synthwave
 
-<img src="https://raw.githubusercontent.com/wguilherme/minimal-synthwave/master/logo.png" width="64" align="left" />A (nearly) no-CSS, fast, minimalist [Jekyll](https://jekyllrb.com/) theme with synthwave aesthetics.
+A (nearly) no-CSS, fast, minimalist [Jekyll](https://jekyllrb.com/) theme with synthwave aesthetics.
 Created by [Withney Guilherme](https://wguilherme.dev/), inspired by [no-style-please](https://github.com/riggraz/no-style-please) theme.
 
 <h3 align="center"><a href="https://blog.phantombyte.uk/">Try the demo out!</a></h3>
