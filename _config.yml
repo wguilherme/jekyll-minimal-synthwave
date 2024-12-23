@@ -1,17 +1,17 @@
-title: minimalist, please! # name of the site
+title: minimal synthwave # name of the site
 author: Withney Guilherme # name of site's author
 email: wguilherme.dev@gmail.com # email of site's author
-url: https://linkedin.com/in/wguilherme # root address of the site
-baseurl: "/minimalist-please" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
+url: https://github.com/wguilherme/minimal-synthwave # root address of the site
+baseurl: "/minimal-synthwave" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
 description: > # description of the site (multiple lines allowed)
-  A (nearly) no-CSS, fast, minimalist Jekyll theme.
+  A (nearly) no-CSS, fast, minimalist Jekyll theme with synthwave aesthetics.
 
 permalink: /:slug.html
 
 favicon: "logo.png" # name+extension of favicon (which must be put on the root folder)
 # goat_counter: "yoursitename" # put your GoatCounter name if you want to use GoatCounter analytics
 
-theme: minimalist-please # if you are using GitHub Pages, change it to remote_theme: riggraz/minimalist-please
+theme: minimal-synthwave # if you are using GitHub Pages, change it to remote_theme: wguilherme/minimal-synthwave
 
 theme_config:
   style: synthwave # ou 'hacker'
