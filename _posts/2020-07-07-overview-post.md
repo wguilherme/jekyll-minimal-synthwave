@@ -71,7 +71,7 @@ Now a table:
 
 ## Images
 
-![theme logo](https://raw.githubusercontent.com/riggraz/no-style-please/master/logo.png){:.ioda}
+![theme logo](https://raw.githubusercontent.com/wguilherme/minimal-synthwave/master/logo.png){:.ioda}
 
 Logo of *minimalist-please* theme[^4]
 
