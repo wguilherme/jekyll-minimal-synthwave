@@ -1,7 +1,7 @@
-# minimalist-please
+# minimal-synthwave
 
-<img src="https://raw.githubusercontent.com/wguilherme/no-style-please/master/logo.png" width="64" align="left" />A (nearly) no-CSS, fast, minimalist [Jekyll](https://jekyllrb.com/) theme.
-Inspired by no style, please [wguilherme](https://wguilherme.dev/), expressly created for [my personal hackspace](https://blog.phantombyte.uk/).
+<img src="https://raw.githubusercontent.com/wguilherme/minimal-synthwave/master/logo.png" width="64" align="left" />A (nearly) no-CSS, fast, minimalist [Jekyll](https://jekyllrb.com/) theme with synthwave aesthetics.
+Created by [Withney Guilherme](https://wguilherme.dev/), inspired by [no-style-please](https://github.com/riggraz/no-style-please) theme.
 
 <h3 align="center"><a href="https://blog.phantombyte.uk/">Try the demo out!</a></h3>
 
@@ -9,7 +9,7 @@ Inspired by no style, please [wguilherme](https://wguilherme.dev/), expressly cr
 
 ## Features
 
-* Fast (**1kb of CSS!** For more information on performance and more, see [Page Speed Insights report](_screenshots/page-speed-insights-report.png) and [Lighthouse report](https://raw.githubusercontent.com/wguilherme/no-style-please/master/_screenshots/lighthouse-report.png))
+* Fast (**1kb of CSS!** For more information on performance and more, see [Page Speed Insights report](_screenshots/page-speed-insights-report.png) and [Lighthouse report](https://raw.githubusercontent.com/wguilherme/minimal-synthwave/master/_screenshots/lighthouse-report.png))
 * Light, dark and auto modes
 * Responsive
 * Content first (typography optimized for maximum readability)
@@ -26,13 +26,13 @@ NOTE: if you are using Jekyll with GitHub Pages, see the [GitHub Pages installat
 Then, to style your blog with this theme, add this line to your Jekyll site's `Gemfile`:
 
 ```ruby
-gem "no-style-please"
+gem "minimal-synthwave"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
 
 ```yaml
-theme: no-style-please
+theme: minimal-synthwave
 ```
 
 And then execute:
@@ -41,7 +41,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install no-style-please
+    $ gem install minimal-synthwave
 
 ### GitHub Pages installation
 
@@ -74,7 +74,7 @@ The `menu.yml` file accepts the following fields:
 
 ### Create archive pages
 
-A so-called archive page is a page that shows a list of posts (see [this](https://wguilherme.dev/no-style-please/all-posts) for an example). You can create an archive page by creating a page and putting the following frontmatter:
+A so-called archive page is a page that shows a list of posts (see [this](https://wguilherme.dev/minimal-synthwave/all-posts) for an example). You can create an archive page by creating a page and putting the following frontmatter:
 
 ```
 ---
@@ -86,7 +86,7 @@ which_category: name-of-category
 
 `which_category` is optional: if you don't put it, then all posts of the blog will be listed; on the other hand, if you specify a category, only posts of that category will be shown.
 
-This feature is particularly useful if used together with the `show_more` attribute in the menu. For example, if you want to limit the number of posts shown in the home page to 5 but add a link to view them all, then you can create an archive page using the method showed above and link to it using the `show_more_url` attribute in `menu.yml`. See [this example](https://github.com/wguilherme/no-style-please/blob/master/_data/menu.yml) if you're in doubt.
+This feature is particularly useful if used together with the `show_more` attribute in the menu. For example, if you want to limit the number of posts shown in the home page to 5 but add a link to view them all, then you can create an archive page using the method showed above and link to it using the `show_more_url` attribute in `menu.yml`. See [this example](https://github.com/wguilherme/minimal-synthwave/blob/master/_data/menu.yml) if you're in doubt.
 
 ### Customize the index page
 
@@ -100,22 +100,81 @@ Another thing you can do to customize the index page is show the description of 
 
 This theme provides dark mode by inverting all colors of light mode throught the CSS `invert()` function. This approach would also invert the color of all images, but, since this is not the behaviour one would expect, images are not inverted by default.
 
-However, if you would like to force the color inversion on a specific image you can do so by applying `class="ioda"` to that image ("ioda" stands for "invert on dark appearance"). See the image in the [overview post](https://github.com/wguilherme/no-style-please/blob/master/_posts/2020-07-07-overview-post.md) for an example of this approach. Note that color inversion will take place only when the theme has dark appearance!
+However, if you would like to force the color inversion on a specific image you can do so by applying `class="ioda"` to that image ("ioda" stands for "invert on dark appearance"). See the image in the [overview post](https://github.com/wguilherme/minimal-synthwave/blob/master/_posts/2020-07-07-overview-post.md) for an example of this approach. Note that color inversion will take place only when the theme has dark appearance!
 
 For example, if you have a black and white image it could make sense to invert it in dark mode. On the other hand, a colorful image will probably look bad if inverted.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/wguilherme/no-style-please. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/wguilherme/minimal-synthwave. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Development
 
-To set up your environment to develop this theme, run `bundle install`.
+### Prerequisites
 
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+- [ASDF Version Manager](https://asdf-vm.com/)
+- Make
 
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `no-style-please.gemspec` accordingly.
+### Setting up the development environment
+
+1. Install ASDF if you haven't already:
+   ```bash
+   brew install asdf
+   ```
+
+2. Install Ruby using ASDF:
+   ```bash
+   asdf install
+   ```
+   This will install Ruby 3.3.4 as specified in the `.tool-versions` file.
+
+3. Install dependencies:
+   ```bash
+   make setup
+   ```
+   This will install Bundler 2.2.34 and all required gems.
+
+### Running locally
+
+To start the development server:
+```bash
+make up
+```
+
+This command will:
+1. Run the setup if not already done
+2. Install all bundle dependencies
+3. Start Jekyll server at `http://localhost:4000`
+
+### Available Make commands
+
+- `make setup`: Installs Bundler and required gems
+- `make up`: Runs the complete setup and starts the Jekyll server
+
+### Testing
+
+To test your theme:
+
+1. Create a new Jekyll site:
+   ```bash
+   jekyll new test-site
+   ```
+
+2. Add this line to the Jekyll site's `Gemfile`:
+   ```ruby
+   gem "minimal-synthwave"
+   ```
+
+3. Add this line to your Jekyll site's `_config.yml`:
+   ```yaml
+   theme: minimal-synthwave
+   ```
+
+4. Run `bundle install`
+
+5. Run `bundle exec jekyll serve`
+
+Your theme should now be visible at `http://localhost:4000`
 
 ## License
 
