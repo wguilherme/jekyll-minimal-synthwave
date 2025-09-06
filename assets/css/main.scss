@@ -1,8 +1,25 @@
 ---
 ---
 
+// Import theme-specific colors first
 {% if site.theme_config.style == 'hacker' %}
-  @import "minimalist-hacker";
+  @import "theme-hacker-colors";
 {% else %}
-  @import "minimalist-synthwave";
+  @import "theme-synthwave-colors";
+{% endif %}
+
+// Then import the unified base styles
+@import "theme-base";
+
+// Apply theme-specific dark appearance mixins
+{% if site.theme_config.style == 'hacker' %}
+  body[a="dark"] { @include hacker-dark-appearance; }
+  @media (prefers-color-scheme: dark) {
+    body[a="auto"] { @include hacker-dark-appearance; }
+  }
+{% else %}
+  body[a="dark"] { @include synthwave-dark-appearance; }
+  @media (prefers-color-scheme: dark) {
+    body[a="auto"] { @include synthwave-dark-appearance; }
+  }
 {% endif %}

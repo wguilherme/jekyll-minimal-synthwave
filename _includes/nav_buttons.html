@@ -1,0 +1,7 @@
+{%-if site.nav_buttons-%}
+  <nav class="nav-buttons">
+    {%-for button in site.nav_buttons-%}
+      <a href="{{ button.url }}" class="nav-btn">{{ button.text }}</a>
+    {%-endfor-%}
+  </nav>
+{%-endif-%}

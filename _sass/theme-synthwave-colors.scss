@@ -1,0 +1,79 @@
+// -------------- SYNTHWAVE THEME COLORS -------------- //
+
+:root {
+  // Main colors
+  --bg-dark: #220C35;
+  --text-primary: #b8c3f1;
+  --link-color: #b1e5fd;
+  --link-hover-glow: 0 0 5px #b1e5fd, 0 0 10px #ff00de;
+  
+  // Header colors
+  --h1-color: #ffda00;
+  --h2-color: #dba663;
+  --h3-color: #6c8e50;
+  --h4-color: #6589d8;
+  
+  // UI elements
+  --hr-color: white;
+  --border-color: black;
+  
+  // Code styling
+  --code-inline-bg: black;
+  --code-inline-border: transparent;
+  --code-block-bg: #220C35;
+  --code-block-border: rgba(254, 107, 117, 0.3);
+  
+  // Navigation buttons (minimalist)
+  --nav-btn-border: #ffda00;
+  --nav-btn-color: #ffda00;
+  --nav-btn-hover-glow: 0 0 5px #ffda00;
+  
+  // Archive button (deprecated)
+  --archive-border-top: rgba(255, 218, 0, 0.3);
+  --archive-border-bottom: rgba(254, 107, 117, 0.3);
+  --archive-btn-bg: linear-gradient(45deg, rgba(255, 218, 0, 0.2), rgba(254, 107, 117, 0.2));
+  --archive-btn-border: #ffda00;
+  --archive-btn-color: #ffda00;
+  --archive-btn-text-shadow: 0 0 10px #ffda00;
+  --archive-btn-hover-gradient: linear-gradient(90deg, transparent, rgba(255, 0, 222, 0.3), transparent);
+  --archive-btn-hover-shadow: 0 0 15px #ffda00, 0 0 25px #fe6b75, 0 0 35px #ff00de;
+  --archive-btn-hover-border: #fe6b75;
+  
+  // Archive layout
+  --post-border: rgba(177, 229, 253, 0.1);
+  --post-date-color: #6589d8;
+  --sidebar-header-color: #ffda00;
+  --year-header-color: #ffda00;
+  --year-header-border: #fe6b75;
+  --month-header-color: #fe6b75;
+  
+  // Filter controls
+  --filter-btn-border: #6c8e50;
+  --filter-btn-color: #6c8e50;
+  --filter-btn-hover-bg: rgba(108, 142, 80, 0.1);
+  --filter-btn-hover-shadow: 0 0 3px #6c8e50;
+  --filter-btn-active-bg: rgba(255, 218, 0, 0.2);
+  --filter-btn-active-border: #ffda00;
+  --filter-btn-active-color: #ffda00;
+  --filter-btn-active-shadow: 0 0 5px #ffda00;
+  
+  // Year navigation
+  --year-toggle-color: #fe6b75;
+  --year-toggle-hover-shadow: 0 0 10px #fe6b75;
+  --year-filter-border: #fe6b75;
+  --year-filter-color: #fe6b75;
+  --year-filter-hover-bg: rgba(254, 107, 117, 0.1);
+  --year-filter-hover-shadow: 0 0 5px #fe6b75;
+  --year-filter-active-bg: rgba(254, 107, 117, 0.2);
+  --year-filter-active-shadow: 0 0 10px #fe6b75;
+  --year-link-hover-shadow: 0 0 10px #fe6b75;
+  
+  // Month navigation
+  --month-filter-color: #6c8e50;
+  --month-filter-hover-bg: rgba(108, 142, 80, 0.1);
+  --month-filter-hover-shadow: 0 0 5px #6c8e50;
+  --month-filter-active-bg: rgba(108, 142, 80, 0.2);
+  --month-filter-active-shadow: 0 0 5px #6c8e50;
+  --month-count-color: #6589d8;
+  --month-link-hover-shadow: 0 0 5px #6c8e50;
+}

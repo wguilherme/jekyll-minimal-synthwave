@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: "en" }}">
   {%- include head.html -%}
-  <body a="{{ site.theme_config.appearance | default: "auto" }}">
+  <body a="{{ site.theme_config.appearance | default: "auto" }}" class="{% if site.theme_config.style == 'synthwave' %}synthwave-theme{% else %}hacker-theme{% endif %}">
     <main class="page-content" aria-label="Content">
       <div class="w">
+        {%-include nav_buttons.html-%}
         {{ content }}
       </div>
     </main>
@@ -11,6 +12,8 @@
     {%-if site.goat_counter and jekyll.environment == "production"-%}
       {%-include goat_counter.html-%}
     {%-endif-%}
+
+    {%-include synthwave-grid.html-%}
 
     {% if page.custom_js %}
       {% for js_file in page.custom_js %}

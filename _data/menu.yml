@@ -26,6 +26,9 @@ entries:
   - title: rss
     url: feed.xml
 
+  - title: interactive archive
+    url: archive-interactive.html
+
   - title: another list
     entries:
       - title: with subitems

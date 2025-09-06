@@ -1,0 +1,79 @@
+// -------------- HACKER THEME COLORS -------------- //
+
+:root {
+  // Main colors
+  --bg-dark: #001400;
+  --text-primary: #D7F4DA;
+  --link-color: #D7F4DA;
+  --link-hover-glow: 0 0 5px #D7F4DA, 0 0 10px #09E22C;
+  
+  // Header colors
+  --h1-color: #09E22C;
+  --h2-color: #dba663;
+  --h3-color: #6c8e50;
+  --h4-color: #6589d8;
+  
+  // UI elements
+  --hr-color: #49694d;
+  --border-color: #D7F4DA;
+  
+  // Code styling
+  --code-inline-bg: #031504;
+  --code-inline-border: #0b5d1454;
+  --code-block-bg: #001400;
+  --code-block-border: rgba(9, 226, 44, 0.3);
+  
+  // Navigation buttons (minimalist)
+  --nav-btn-border: #09E22C;
+  --nav-btn-color: #09E22C;
+  --nav-btn-hover-glow: 0 0 3px #09E22C;
+  
+  // Archive button (deprecated)
+  --archive-border-top: rgba(9, 226, 44, 0.3);
+  --archive-border-bottom: rgba(9, 226, 44, 0.3);
+  --archive-btn-bg: linear-gradient(45deg, rgba(9, 226, 44, 0.2), rgba(219, 166, 99, 0.2));
+  --archive-btn-border: #09E22C;
+  --archive-btn-color: #09E22C;
+  --archive-btn-text-shadow: 0 0 5px #09E22C;
+  --archive-btn-hover-gradient: linear-gradient(90deg, transparent, rgba(9, 226, 44, 0.2), transparent);
+  --archive-btn-hover-shadow: 0 0 10px #09E22C, 0 0 20px #09E22C;
+  --archive-btn-hover-border: #dba663;
+  
+  // Archive layout
+  --post-border: rgba(215, 244, 218, 0.1);
+  --post-date-color: #6589d8;
+  --sidebar-header-color: #09E22C;
+  --year-header-color: #09E22C;
+  --year-header-border: #09E22C;
+  --month-header-color: #dba663;
+  
+  // Filter controls
+  --filter-btn-border: #6c8e50;
+  --filter-btn-color: #6c8e50;
+  --filter-btn-hover-bg: rgba(108, 142, 80, 0.1);
+  --filter-btn-hover-shadow: 0 0 3px #6c8e50;
+  --filter-btn-active-bg: rgba(9, 226, 44, 0.2);
+  --filter-btn-active-border: #09E22C;
+  --filter-btn-active-color: #09E22C;
+  --filter-btn-active-shadow: 0 0 5px #09E22C;
+  
+  // Year navigation
+  --year-toggle-color: #dba663;
+  --year-toggle-hover-shadow: 0 0 5px #dba663;
+  --year-filter-border: #dba663;
+  --year-filter-color: #dba663;
+  --year-filter-hover-bg: rgba(219, 166, 99, 0.1);
+  --year-filter-hover-shadow: 0 0 3px #dba663;
+  --year-filter-active-bg: rgba(219, 166, 99, 0.2);
+  --year-filter-active-shadow: 0 0 5px #dba663;
+  --year-link-hover-shadow: 0 0 5px #dba663;
+  
+  // Month navigation
+  --month-filter-color: #6c8e50;
+  --month-filter-hover-bg: rgba(108, 142, 80, 0.1);
+  --month-filter-hover-shadow: 0 0 3px #6c8e50;
+  --month-filter-active-bg: rgba(108, 142, 80, 0.2);
+  --month-filter-active-shadow: 0 0 5px #6c8e50;
+  --month-count-color: #6589d8;
+  --month-link-hover-shadow: 0 0 3px #6c8e50;
+}

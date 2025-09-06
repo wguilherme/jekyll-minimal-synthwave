@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+{%-include back_link.html-%}
+
+<h1>{{ page.title }}</h1>
+
+{%-if page.which_category-%}
+  {%-assign posts = site.categories[page.which_category]-%}  
+{%-else-%}
+  {%-assign posts = site.posts-%}
+{%-endif-%}
+
+{%- if posts.size > 0 -%}
+  {%- assign posts_by_year = posts | group_by_exp: "post", "post.date | date: '%Y'" -%}
+  {%- assign posts_by_month = posts | group_by_exp: "post", "post.date | date: '%Y-%m'" -%}
+  
+  <div class="archive-container">
+    <nav class="archive-sidebar">
+      <h3>Browse by Date</h3>
+      <ul class="year-list">
+        {%- for year_group in posts_by_year -%}
+          <li class="year-item">
+            <a href="#year-{{ year_group.name }}" class="year-link">{{ year_group.name }}</a>
+            <ul class="month-list">
+              {%- assign year_posts = posts | where_exp: "post", "post.date contains year_group.name" -%}
+              {%- assign year_months = year_posts | group_by_exp: "post", "post.date | date: '%B'" -%}
+              {%- for month_group in year_months -%}
+                {%- assign month_number = month_group.items.first.date | date: '%m' -%}
+                <li class="month-item">
+                  <a href="#month-{{ year_group.name }}-{{ month_number }}" class="month-link">{{ month_group.name }}</a>
+                  <span class="post-count">({{ month_group.size }})</span>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+
+    <main class="archive-content">
+      {%- for year_group in posts_by_year -%}
+        <section class="year-section" id="year-{{ year_group.name }}">
+          <h2 class="year-header">{{ year_group.name }}</h2>
+          
+          {%- assign year_posts = posts | where_exp: "post", "post.date contains year_group.name" -%}
+          {%- assign year_months = year_posts | group_by_exp: "post", "post.date | date: '%Y-%m'" -%}
+          
+          {%- for month_group in year_months -%}
+            {%- assign month_name = month_group.items.first.date | date: '%B' -%}
+            {%- assign month_number = month_group.items.first.date | date: '%m' -%}
+            
+            <div class="month-section" id="month-{{ year_group.name }}-{{ month_number }}">
+              <h3 class="month-header">{{ month_name }}</h3>
+              <ul class="post-list">
+                {%- for post in month_group.items -%}
+                  <li class="post-item">
+                    <span class="post-date">{{ post.date | date: "%d" }}</span>
+                    <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title | downcase }}</a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          {%- endfor -%}
+        </section>
+      {%- endfor -%}
+    </main>
+  </div>
+{%- endif -%}

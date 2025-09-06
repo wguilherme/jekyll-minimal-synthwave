@@ -16,4 +16,38 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | relative_url }}" />
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
+  
+  <!-- Prism.js Syntax Highlighting -->
+  {%-if site.theme_config.enable_code_highlighting != false-%}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/{{ site.theme_config.code_theme | default: 'prism-tomorrow' }}.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script>
+      // Jekyll-Prism compatibility script
+      document.addEventListener('DOMContentLoaded', function() {
+        // Convert Jekyll's highlighter-rouge to Prism-compatible format
+        document.querySelectorAll('div.highlighter-rouge').forEach(function(div) {
+          // Add prism-highlighted class to prevent Jekyll CSS conflicts
+          div.classList.add('prism-highlighted');
+          
+          // Find the language from Jekyll's class
+          const langMatch = div.className.match(/language-(\w+)/);
+          if (langMatch) {
+            const lang = langMatch[1];
+            const codeElement = div.querySelector('code');
+            const preElement = div.querySelector('pre');
+            
+            if (codeElement && preElement) {
+              // Add Prism language class to code element
+              codeElement.classList.add('language-' + lang);
+              preElement.classList.add('language-' + lang);
+              
+              // Trigger Prism highlighting
+              Prism.highlightElement(codeElement);
+            }
+          }
+        });
+      });
+    </script>
+  {%-endif-%}
 </head>

@@ -14,11 +14,21 @@ favicon: "logo.png" # name+extension of favicon (which must be put on the root f
 theme: minimal-synthwave # if you are using GitHub Pages, change it to remote_theme: wguilherme/minimal-synthwave
 
 theme_config:
-  style: synthwave # ou 'hacker'
+  style: synthwave # 'hacker' or 'synthwave'
   appearance: "auto" # can be "light", "dark" or "auto"
   back_home_text: ".." # customize text for homepage link in post layout
   date_format: "%Y-%m-%d" # customize how date is formatted
   show_description: false # show blog description in home page
+  show_archive_button: false # show interactive archive button on home page (deprecated, use nav_buttons instead)
+  archive_button_text: "📚 Browse Archive" # text for archive button
+  archive_button_url: "archive-interactive.html" # URL for archive button
+  enable_code_highlighting: true # enable Prism.js syntax highlighting
+  code_theme: "prism-synthwave84" # prism theme: prism-synthwave84, prism-one-dark, prism-night-owl, prism-dracula
+
+# Navigation buttons (minimalist style buttons at the top)
+nav_buttons:
+  - text: "📚 Browse Archive"
+    url: "archive-interactive.html"
 
 sass:
   style: :compressed

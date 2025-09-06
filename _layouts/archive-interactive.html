@@ -1,0 +1,145 @@
+---
+layout: default
+---
+
+{%-include back_link.html-%}
+
+<h1>{{ page.title }}</h1>
+
+{%-if page.which_category-%}
+  {%-assign posts = site.categories[page.which_category]-%}  
+{%-else-%}
+  {%-assign posts = site.posts-%}
+{%-endif-%}
+
+{%- if posts.size > 0 -%}
+  {%- assign posts_by_year = posts | group_by_exp: "post", "post.date | date: '%Y'" | reverse -%}
+  
+  <div class="archive-interactive-container">
+    <main class="archive-main-content">
+      <ul class="all-posts-list" id="posts-list">
+        {%- for post in posts -%}
+          <li class="post-item" data-year="{{ post.date | date: '%Y' }}" data-month="{{ post.date | date: '%Y-%m' }}">
+            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+            <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title | downcase }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </main>
+
+    <nav class="archive-interactive-sidebar">
+      <h3>Browse by Date</h3>
+      <div class="filter-controls">
+        <button class="filter-btn active" data-filter="all">All Posts ({{ posts.size }})</button>
+      </div>
+      
+      <ul class="year-nav-list">
+        {%- for year_group in posts_by_year -%}
+          {%- assign year_posts = year_group.items -%}
+          {%- assign year_months = year_posts | group_by_exp: "post", "post.date | date: '%Y-%m'" -%}
+          
+          <li class="year-nav-item">
+            <div class="year-header-nav">
+              <button class="year-toggle-btn" data-year="{{ year_group.name }}">
+                <span class="toggle-icon">▶</span>
+                <span class="year-text">{{ year_group.name }}</span>
+                <span class="year-count">({{ year_group.size }})</span>
+              </button>
+              <button class="year-filter-btn" data-filter="year" data-year="{{ year_group.name }}">
+                Filter Year
+              </button>
+            </div>
+            
+            <ul class="month-nav-list" data-year="{{ year_group.name }}">
+              {%- for month_group in year_months -%}
+                {%- assign month_name = month_group.items.first.date | date: '%B' -%}
+                
+                <li class="month-nav-item">
+                  <button class="month-filter-btn" data-filter="month" data-month="{{ month_group.name }}">
+                    <span class="month-text">{{ month_name }}</span>
+                    <span class="month-count">({{ month_group.size }})</span>
+                  </button>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const postsList = document.getElementById('posts-list');
+      const allPosts = Array.from(document.querySelectorAll('.post-item'));
+      const filterButtons = document.querySelectorAll('[data-filter]');
+      
+      // Toggle year expansion
+      document.querySelectorAll('.year-toggle-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          const year = this.dataset.year;
+          const monthList = document.querySelector(`[data-year="${year}"].month-nav-list`);
+          const toggleIcon = this.querySelector('.toggle-icon');
+          
+          if (monthList.style.display === 'none' || !monthList.style.display) {
+            monthList.style.display = 'block';
+            toggleIcon.textContent = '▼';
+            this.classList.add('expanded');
+          } else {
+            monthList.style.display = 'none';
+            toggleIcon.textContent = '▶';
+            this.classList.remove('expanded');
+          }
+        });
+      });
+      
+      // Filter posts
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          document.querySelectorAll('.filter-btn, .year-filter-btn, .month-filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          const filterType = this.dataset.filter;
+          const year = this.dataset.year;
+          const month = this.dataset.month;
+          
+          // Show/hide posts based on filter
+          allPosts.forEach(post => {
+            let shouldShow = false;
+            
+            if (filterType === 'all') {
+              shouldShow = true;
+            } else if (filterType === 'year') {
+              shouldShow = post.dataset.year === year;
+            } else if (filterType === 'month') {
+              shouldShow = post.dataset.month === month;
+            }
+            
+            post.style.display = shouldShow ? 'flex' : 'none';
+          });
+          
+          // Update main content header
+          updateContentHeader(filterType, year, month);
+        });
+      });
+      
+      // Initialize - hide all month lists by default
+      document.querySelectorAll('.month-nav-list').forEach(list => {
+        list.style.display = 'none';
+      });
+      
+      function updateContentHeader(filterType, year, month) {
+        const visiblePosts = allPosts.filter(post => post.style.display !== 'none');
+        const count = visiblePosts.length;
+        
+        // You can add a header update here if needed
+        console.log(`Showing ${count} posts for filter: ${filterType}`, {year, month});
+      }
+    });
+  </script>
+{%- endif -%}
