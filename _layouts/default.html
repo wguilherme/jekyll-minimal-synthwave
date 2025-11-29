@@ -4,7 +4,6 @@
   <body a="{{ site.theme_config.appearance | default: "auto" }}" class="{% if site.theme_config.style == 'synthwave' %}synthwave-theme{% else %}hacker-theme{% endif %}">
     <main class="page-content" aria-label="Content">
       <div class="w">
-        {%-include nav_buttons.html-%}
         {{ content }}
       </div>
     </main>

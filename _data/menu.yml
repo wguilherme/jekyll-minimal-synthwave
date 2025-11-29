@@ -6,8 +6,8 @@ entries:
     entries:
       - title: a minimalist Jekyll theme with synthwave aesthetics
       - title: github repo
-        url: https://github.com/wguilherme/minimal-synthwave
-      - title: "created by <a href='https://wguilherme.dev'>Withney Guilherme</a>"
+        url: https://github.com/wguilherme/jekyll-minimal-synthwave
+      - title: "created by <a href='https://www.linkedin.com/in/wguilherme/'>Withney Guilherme</a>"
 
   - title: all posts
     post_list:

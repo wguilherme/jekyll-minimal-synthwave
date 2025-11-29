@@ -160,6 +160,10 @@ h4 { color: var(--h4-color); }
 h5, h6, p { color: var(--text-primary); }
 
 // Navigation buttons (minimalist style)
+.featured-section {
+  margin-bottom: 2rem;
+}
+
 .nav-buttons {
   display: flex;
   gap: 1rem;
